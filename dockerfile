@@ -8,5 +8,5 @@ WORKDIR /app
 COPY . .
 
 RUN npm i
-
+RUN ["chmod", "+x", "./start.sh"]
 ENTRYPOINT [ "npm", "start" ]; exit 0
