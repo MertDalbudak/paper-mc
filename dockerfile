@@ -9,5 +9,4 @@ COPY . .
 
 RUN npm i
 
-#RUN node ./main.js; exit 0
 ENTRYPOINT [ "npm", "start" ]; exit 0
