@@ -1,0 +1,14 @@
+{
+  "name": "paper-mc",
+  "version": "1.0.0",
+  "description": "A docker container to deploy the latest paper mc server. If a new version of papermc was released on startup a backup of the servers current state will be created.",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "author": "Mert Dalbudak",
+  "license": "ISC",
+  "dependencies": {
+    "oauth": "^0.10.0"
+  }
+}

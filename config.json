@@ -1,0 +1,37 @@
+{
+    "database": {
+        "default": {
+            
+        }
+    },
+    "services": {
+        "paper": {
+            "hostname": "api.papermc.io",
+            "path": "/v2/projects/paper",
+            "secure": true,
+            "port": 443,
+            "authorization": {
+                "type": null
+            },
+            "headers": {
+                "Accept": "*/*",
+                "Content-Type": "application/json"
+            },
+            "queries": {},
+            "endpoints": {
+                "getVersions": {
+                    "path": "/",
+                    "method": "GET",
+                    "headers": {},
+                    "queries": {}
+                },
+                "getBuilds": {
+                    "path": "/versions/{{version}}",
+                    "method": "GET",
+                    "headers": {},
+                    "queries": {}
+                }
+            }
+        }
+    }
+}
