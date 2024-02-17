@@ -35,16 +35,21 @@ function backupServer(callback){
         counter++;
     }while(fs.existsSync(backup_path));
 
+    console.log("CREATE BACKUP OF SERVER");
+
     exec(`zip -9 -r '${backup_path}' server`, (error, stdout, stderr) => {
         if(error != null && stderr != null){
+            console.error(error);
             throw new Error(error);
         }
+        console.log("BACKUP COMPLETED");
         callback();
     });
 }
 
 function startServer(){
-    execSync('./start.sh');
+    console.log("Starting Server");
+    execSync('/bin/sh ./start.sh');
 }
 
 const getServerVersion = ()=> fs.existsSync(SERVER_VERSION) ? JSON.parse(fs.readFileSync(SERVER_VERSION)).currentVersion : null;
@@ -68,6 +73,7 @@ async function main(){
             backupServer(()=>{
                 fs.copyFile(DOWNLOAD_PAPER_JAR, SERVER_PAPER_JAR, (error)=>{
                     if(error){
+                        console.error(error);
                         throw new Error(error);
                     }
                     fs.unlinkSync(DOWNLOAD_PAPER_JAR);

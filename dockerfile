@@ -1,7 +1,6 @@
-FROM ubuntu
-FROM node:lts-slim
+FROM alpine:latest
 
-RUN apt update && apt install openjdk-17-jre-headless zip -y
+RUN apk update && apk add --no-cache openjdk17-jre-headless nodejs npm zip
 
 WORKDIR /app
 
