@@ -1,4 +1,3 @@
-FROM ubuntu
 FROM node:lts-slim
 
 RUN apt update && apt install openjdk-17-jre-headless zip -y
