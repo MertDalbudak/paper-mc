@@ -8,4 +8,11 @@ This container requires 2 mountpoints.
 1. Location of the server bind to `/app/server`
 2. Location of backups bind to `/app/backups`
 
-Uses `Java` version 17 (headless)
+Uses `Java` version 21 (headless)
+
+<b>Use `alpine` tag for `Java 21`</b>
+
+<b>Do not use the `latest` tag because the highest Java version supported by Debian Bookworm is `Java 17`, while the latest Paper version requires at least `Java 21`</b>
+<br>
+
+View github repository: [MertDalbudak/paper-mc](https://github.com/MertDalbudak/paper-mc)
