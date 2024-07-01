@@ -1,6 +1,6 @@
-FROM alpine:latest
+FROM node:lts-alpine
 
-RUN apk update && apk add --no-cache openjdk17-jre-headless nodejs npm zip
+RUN apk update && apk add --no-cache openjdk21-jre-headless zip
 
 WORKDIR /app
 
