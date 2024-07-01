@@ -15,4 +15,16 @@ Uses `Java` version 21 (headless)
 <b>Do not use the `latest` tag because the highest Java version supported by Debian Bookworm is `Java 17`, while the latest Paper version requires at least `Java 21`</b>
 <br>
 
+services:
+  app:
+    image: mertdalbudak/paper-mc:alpine
+    ports:
+      - 25565:25565
+    volumes:
+      - /home/mert/server:/app/server
+      - /home/mert/backup:/app/backups
+    environment:
+      - Xms=1G
+      - Xmx=3G
+
 View github repository: [MertDalbudak/paper-mc](https://github.com/MertDalbudak/paper-mc)
