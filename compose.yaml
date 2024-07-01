@@ -6,3 +6,6 @@ services:
     volumes:
       - /home/mert/server:/app/server
       - /home/mert/backup:/app/backups
+    environment:
+      - Xms=1G
+      - Xmx=3G
