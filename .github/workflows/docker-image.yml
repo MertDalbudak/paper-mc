@@ -2,26 +2,26 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "docker-ci/cd" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "docker-ci/cd" ]
 
 jobs:
 
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: alpine
 
     steps:
     -
         name: Checkout
         uses: actions/checkout@v4
     -
-        name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
     - 
       name: Docker Buildx Bake
       uses: docker/bake-action@v5.3.0
       with:
           source: "${{ github.server_url }}/${{ github.repository }}.git#${{ github.ref }}"
-          file: dockerfile
+          platforms: linux/amd64,linux/arm64
