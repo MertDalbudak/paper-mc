@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "docker-ci/cd" ]
+    branches: [ "alpine" ]
   pull_request:
-    branches: [ "docker-ci/cd" ]
+    branches: [ "alpine" ]
 
 jobs:
 
@@ -19,7 +19,7 @@ jobs:
     -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
-    - 
+    -
       name: Docker Buildx Bake
       uses: docker/bake-action@v5.3.0
       id: buildx
