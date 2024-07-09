@@ -24,3 +24,4 @@ jobs:
       uses: docker/bake-action@v5.3.0
       with:
           source: "${{ github.server_url }}/${{ github.repository }}.git#${{ github.ref }}"
+          file: dockerfile
