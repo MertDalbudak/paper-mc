@@ -64,7 +64,7 @@ async function main(){
 
     download_url = `https://api.papermc.io/v2/projects/paper/versions/${latest_version}/builds/${latest_build}/downloads/paper-${latest_version}-${latest_build}.jar`;
     // NEW PAPER VERSION AVAILABLE?
-    if(fs.existsSync(SERVER_PAPER_JAR) == false || getServerVersion()?.includes(`${latest_build} (MC: ${latest_version})`) == false){
+    if(fs.existsSync(SERVER_PAPER_JAR) == false || getServerVersion()?.includes(`${latest_version}-${latest_build}`) == false){
         // DOWNLOAD LATEST PAPER
         download(download_url, (error)=>{
             if(error){
