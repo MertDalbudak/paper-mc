@@ -16,6 +16,12 @@ function download(url, callback) {
     https.get(url, function(response) {
         response.pipe(file);
         file.on('finish', function() {
+            try{
+                execSync(`chmod +x ${DOWNLOAD_PAPER_JAR}`);
+            }
+            catch(error){
+                console.error(error);
+            }
             console.log("DOWNLOADING COMPLETE");
             file.close(() => callback());  // close() is async, call cb after close completes.
         });
