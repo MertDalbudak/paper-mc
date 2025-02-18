@@ -12,8 +12,8 @@ wget https://download.oracle.com/java/21/latest/jdk-21_linux-aarch64_bin.tar.gz 
 tar -xzvf jdk-21_linux-aarch64_bin.tar.gz && \
 rm jdk-21_linux-aarch64_bin.tar.gz && \
 mkdir -p ~/.bin/java && \
-mv jdk-21.0.5 ~/.bin/java && \
-PATH="$HOME/.bin/java/jdk-21.0.5/bin:$PATH"; \
+mv jdk-21.0.6 ~/.bin/java && \
+PATH="$HOME/.bin/java/jdk-21.0.6/bin:$PATH"; \
 fi
 
 WORKDIR /app
