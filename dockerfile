@@ -6,6 +6,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm i
-RUN ["chmod", "+x", "./start.sh"]
+RUN npm ci --only=production --no-audit --no-fund && chmod +x ./start.sh
+
 ENTRYPOINT [ "npm", "start" ]; exit 0
