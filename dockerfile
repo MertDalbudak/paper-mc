@@ -1,6 +1,6 @@
 FROM node:lts-alpine
 
-RUN apk update && apk add --no-cache openjdk21-jre zip
+RUN apk update && apk add --no-cache openjdk25-jre zip
 
 WORKDIR /app
 
